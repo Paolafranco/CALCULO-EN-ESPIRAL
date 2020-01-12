@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Càlculo en espiral</title>
+</head>
+
+<body>
+        <center><h1>CÁLCULO EN ESPIRAL</h1></center>
+        <br>
+    <center><table border="1">
+    <tr>
+      <td>1</td>
+      <td>-5</td>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>4</td>
+      <td>3</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>25</td>
+      <td>30</td>
+      <td>-80</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>-5</td>
+      <td>-2</td>
+      <td>-3</td>
+    </tr>
+    </table></center>
+    <br>
+    <br>
+    <header>
+       
+            
+      
+         <br>
+         <div class="texto">
+             <div class="fila1">
+                 <label for="fila">Fila:</label>
+                 <input type="text" name="fila" id="numFilas">
+             </div>
+             <br>
+             <div class="columna1">
+                 <label for="columna">Columna:</label>
+                 <input type="text" name="columna" id="numColumnas">
+             </div>
+     </header>
+     <br>
+    <br>
+    <center><main class="botones">
+        <div class="generar-matriz">
+            <button type="button" name="button" onclick="generarTabla()">Generar</button>
+        </div>
+        <br>
+        <div class="calcular">
+                <button type="button" name="button" onclick="ingresarNumeros()">Ingresar números</button>
+        </div>
+        <br>
+          <div class="calcular">
+           <button type="button" name="button" onclick="realizarCalculo()">Calcular</button>
+          </div>
+          <br>
+          <div class="calcular">
+            <button type="button" name="button" onclick="borrar()">Borrar</button>
+
+           </div>
+    </main></center>
+    <hr>
+    <div class="" id="matriz">
+
+    </div>
+    <script type="text/javascript">
+    document.getElementById("matriz").value="none";
+        
+        function generarTabla() {
+            var numeroColumnas = parseInt(document.getElementById("numColumnas").value);
+            var numeroFilas = parseInt(document.getElementById("numFilas").value);
+            var codigoTabla = "<table border=\"1\"><tbody>";
+        //boton generar matriz vacia
+            if (numeroFilas > 2 && numeroFilas < 50) {
+                var x=numeroFilas;
+                
+                } else {
+                alert("La hora en la que se genera su resultado es: 08:30 y su fecha es 09/12/2019");
+                        document.getElementById("numFilas").value="";
+                        codigoTabla="";
+                        
+
+            }
+            
+            if (numeroColumnas>2 && numeroColumnas<50) {
+                for(var i=0;i<numeroFilas;i++){
+                codigoTabla+="<tr>";
+                for(var j=0;j<numeroColumnas;j++){
+                    codigoTabla+="<td>"+0+"</td>";
+                }
+                codigoTabla+="</tr>";
+                
+            }
+             } else {
+                        document.getElementById("numColumnas").value="";
+                        codigoTabla="";
+                        
+                                          
+            }
+            codigoTabla += "</tbody></table>";
+            document.getElementById("matriz").innerHTML = codigoTabla;
+            
+        }
+        //boton borrar
+        function borrar(){
+            document.getElementById("matriz").innerHTML="";
+            document.getElementById("numFilas").value="";
+            document.getElementById("numColumnas").value="";
+        }
+        //boton ingresar numeros aleatorios
+        function ingresarNumeros(){
+            
+        }
+    </script>
+</body>
+</html>
